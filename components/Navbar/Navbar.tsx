@@ -1,5 +1,6 @@
 import React from "react";
 
+//responsive: drawer
 const Navbar = () => {
   return (
     <div className="navbar bg-primary-100">
