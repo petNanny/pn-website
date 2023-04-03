@@ -5,7 +5,7 @@ import BackgroundWrapper from "./backgroundWrapper";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar/Navbar";
 import SearchCard from "../components/SearchCard/SearchCard";
-
+import process from "process";
 interface Props {
   children: ReactNode;
 }
@@ -21,6 +21,9 @@ const Layout = ({ children }: Props) => {
         <div>{children}</div>
         <Footer />
       </BackgroundWrapper>
+      <script
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_KEY}&libraries=places`}
+      ></script>
     </>
   );
 };

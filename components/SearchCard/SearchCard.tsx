@@ -1,39 +1,17 @@
 import React from "react";
-import dogBoarding from "../../assets/Icons/homeDogBoarding.svg";
+import ServiceInput from "./ServiceInput/ServiceInput";
+import AddressInput from "./AddressInput/AddressInput";
+import DateInput from "./DateInput/DateInput";
+import { useState, useCallback } from "react";
 
 const SearchCard = () => {
   return (
     <div className="card w-fit shadow-2xl bg-base-100 mx-auto">
       <div className="card-body">
         <div className="grid grid-cols-2 gap-4 items-end">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">I'm looking for</span>
-            </label>
-            <select className="select select-bordered w-full max-w-xs">
-              <optgroup label="At the sitter's home">
-                <option>Dog Boarding</option>
-                <option>Doggy Day Care</option>
-              </optgroup>
-              <optgroup label="At your home">
-                <option>Dog Walking</option>
-                <option>Home Visits</option>
-                <option>House Sitting</option>
-              </optgroup>
-            </select>
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Near</span>
-            </label>
-            <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Dates</span>
-            </label>
-            <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-          </div>
+          <ServiceInput />
+          <AddressInput />
+          <DateInput />
           <button className="btn btn-accent normal-case border-none">Search now</button>
         </div>
       </div>
