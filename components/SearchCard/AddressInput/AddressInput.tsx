@@ -46,7 +46,7 @@ const PlacesAutocomplete = () => {
     return (
       <ul
         tabIndex={0}
-        className="drop-shadow-md dropdown-content menu p-4 shadow bg-base-100 rounded-box absolute"
+        className="dropdown-content menu p-4 shadow drop-shadow-md bg-base-100 rounded-box absolute"
       >
         {data.map((suggestion) => {
           const {
@@ -57,42 +57,15 @@ const PlacesAutocomplete = () => {
           return (
             <li key={place_id} className="items-start max-w-xs" onClick={handleSelect(suggestion)}>
               <span className="max-w-xs">
-                {main_text},{secondary_text}
+                {main_text}, {secondary_text}
               </span>
               {/* <strong>{main_text}</strong> <small>{secondary_text}</small> */}
             </li>
           );
         })}
       </ul>
-      // <ul tabIndex={0} className="absolute bg-primary-content">
-      //   {data.map((suggestion) => {
-      //     const {
-      //       place_id,
-      //       structured_formatting: { main_text, secondary_text },
-      //     } = suggestion;
-
-      //     return (
-      //       <li key={place_id} className="truncate max-w-xs" onClick={handleSelect(suggestion)}>
-      //         <strong>{main_text}</strong> <small>{secondary_text}</small>
-      //       </li>
-      //     );
-      //   })}
-      // </ul>
     );
   };
-  // data.map((suggestion) => {
-  //   const {
-  //     place_id,
-  //     structured_formatting: { main_text, secondary_text },
-  //   } = suggestion;
-
-  //   return (
-  //     <option key={place_id}
-  //     className="w-full max-w-xs absolute" onClick={handleSelect(suggestion)}>
-  //       <strong>{main_text}</strong> <small>{secondary_text}</small>
-  //     </option>
-  //   );
-  // });
 
   return (
     <div ref={ref}>

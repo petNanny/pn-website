@@ -7,7 +7,7 @@ const ServiceInput = () => {
         <span className="label-text">I'm looking for</span>
       </label>
       <select className="select select-bordered w-full max-w-xs">
-        <optgroup label="At the sitter's home">
+        <optgroup label="At the sitter's home" >
           <option>Dog Boarding</option>
           <option>Doggy Day Care</option>
         </optgroup>
