@@ -74,7 +74,7 @@ const PlacesAutocomplete = () => {
         onChange={handleInput}
         disabled={!ready}
         className="input input-bordered w-full max-w-xs"
-        placeholder="Type here"
+        placeholder="Your street name"
       />
       {/* We can use the "status" to decide whether we should display the dropdown or not */}
       {status === "OK" && <ul>{renderSuggestions()}</ul>}
