@@ -6,6 +6,15 @@ import {
   SelectRangeEventHandler
 } from 'react-day-picker';
 
+const StyledDayPicker = `
+.rdp-day {
+  width: 100%
+}
+  .rdp-day_selected, .rdp-day:hover {
+    background-color: rgb(0, 195, 138);
+  }
+`;
+
 const defaultDate = new Date();
 
 function Example() {
@@ -35,24 +44,10 @@ function Example() {
   };
 
   return (
-  <div >
-    <div className='grid grid-cols-2 gap-4 max-w-xs'>
-        <span>{fromValue}</span>
-        <span>{toValue}</span>
-    </div>
-        {/* <input
-          value={fromValue}
-          // onChange={handleInput}
-          // disabled={!ready}
-          className="input input-bordered max-w-xs"
-        />
-        <input
-          value={toValue}
-          // onChange={handleInput}
-          // disabled={!ready}
-          className="input input-bordered max-w-xs"
-        /> */}
-    <div className='dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52'>
+  <div className="dropdown" >
+    <label tabIndex={0} className="w-full max-w-xs btn btn-outline text-black border-2 border-slate-300 hover:border-slate-300 hover:bg-transparent hover:text-black">{((fromValue)?(fromValue):("Start Date"))+" > "+ ((toValue)?(toValue):("End Date"))}</label>
+    <div tabIndex={0} className='dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52'>
+      <style>{StyledDayPicker}</style>
       <DayPicker
         mode="range"
         defaultMonth={defaultDate}
@@ -66,11 +61,10 @@ function Example() {
 
 const DateInput = () => {
   return (
-    <div className="form-control dropdown">
-      <label tabIndex={0} className="label">
+    <div className="form-control dropdown max-w-xs w-full">
+      <label tabIndex={0} className="label w-full max-w-xs">
         <span className="label-text">Dates</span>
       </label>
-      {/* <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" /> */}
       <Example />
     </div>
   );

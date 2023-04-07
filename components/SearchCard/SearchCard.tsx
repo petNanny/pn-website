@@ -12,7 +12,7 @@ const SearchCard = () => {
           <ServiceInput />
           <AddressInput />
           <DateInput />
-          <button className="btn btn-accent normal-case border-none">Search now</button>
+          <button className="btn btn-accent normal-case border-2 border-slate-300">Search now</button>
         </div>
       </div>
     </div>
