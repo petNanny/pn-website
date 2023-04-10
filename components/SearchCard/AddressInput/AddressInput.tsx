@@ -3,7 +3,13 @@ import { ChangeEvent } from "react";
 import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
 import useOnclickOutside from "react-cool-onclickoutside";
 
-const PlacesAutocomplete = () => {
+export interface AddressInputProps {
+  changeLatAndLon: (Lat: number, Lon: number) => void;
+  changeLocation: (Location: string) => void;
+}
+
+
+const PlacesAutocomplete = ({changeLatAndLon, changeLocation}: AddressInputProps) => {
   const {
     ready,
     value,
@@ -16,6 +22,7 @@ const PlacesAutocomplete = () => {
     },
     debounce: 300,
   });
+
   const ref = useOnclickOutside(() => {
     // When user clicks outside of the component, we can dismiss
     // the searched suggestions by calling this method
@@ -24,7 +31,10 @@ const PlacesAutocomplete = () => {
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     // Update the keyword of the input element
-    setValue(e.target.value);
+    const location = e.target.value;
+    console.log("location");
+    console.log(location);
+    setValue(location);
   };
 
   const handleSelect =
@@ -34,11 +44,13 @@ const PlacesAutocomplete = () => {
       // by setting the second parameter to "false"
       setValue(description, false);
       clearSuggestions();
+      changeLocation(description);
 
       // Get latitude and longitude via utility functions
       getGeocode({ address: description }).then((results) => {
         const { lat, lng } = getLatLng(results[0]);
         console.log("📍 Coordinates: ", { lat, lng });
+        changeLatAndLon(lat, lng);
       });
     };
 
@@ -82,14 +94,14 @@ const PlacesAutocomplete = () => {
   );
 };
 
-const AddressInput = () => {
+const AddressInput = ({changeLatAndLon, changeLocation}: AddressInputProps) => {
   return (
     <div className="form-control">
       <label tabIndex={0} className="label">
         <span className="label-text">Near</span>
       </label>
       {/* <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" /> */}
-      <PlacesAutocomplete />
+      <PlacesAutocomplete changeLatAndLon = {changeLatAndLon} changeLocation= {changeLocation}/>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addDays, format } from 'date-fns';
+import { format,eachDayOfInterval } from 'date-fns';
 import {
   DateRange,
   DayPicker,
@@ -15,9 +15,14 @@ const StyledDayPicker = `
   }
 `;
 
+
+export interface DateInputProps {
+  changeSelectedDate: (date: Date[] | undefined) => void;
+}
+
 const defaultDate = new Date();
 
-function Example() {
+function Example({changeSelectedDate}: DateInputProps) {
   const defaultSelected: DateRange = {
     from: defaultDate,
     to: defaultDate
@@ -26,11 +31,9 @@ function Example() {
   const [fromValue, setFromValue] = useState<string>('');
   const [toValue, setToValue] = useState<string>('');
 
-
   const handleRangeSelect: SelectRangeEventHandler = (
     range: DateRange | undefined
   ) => {
-    setSelectedRange(range);
     if (range?.from) {
       setFromValue(format(range.from, 'dd/MM/y'));
     } else {
@@ -41,7 +44,21 @@ function Example() {
     } else {
       setToValue('');
     }
+    if (range?.from && range?.to) {
+      console.log("range");
+      console.log(range);
+      changeSelectedDate(eachDayOfInterval({
+        start: range.from,
+        end: range.to,
+      }));
+    }
+    else
+    {
+      changeSelectedDate([]);
+    }
+    setSelectedRange(range);
   };
+
 
   return (
   <div className="dropdown" >
@@ -59,13 +76,13 @@ function Example() {
   );
 }
 
-const DateInput = () => {
+const DateInput = ({changeSelectedDate}: DateInputProps) => {
   return (
     <div className="form-control dropdown max-w-xs w-full">
       <label tabIndex={0} className="label w-full max-w-xs">
         <span className="label-text">Dates</span>
       </label>
-      <Example />
+      <Example changeSelectedDate={changeSelectedDate}/>
     </div>
   );
 };
