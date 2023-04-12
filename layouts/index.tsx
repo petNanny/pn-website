@@ -16,10 +16,10 @@ const Layout = ({ children }: Props) => {
       <Header />
       <Navbar />
       <SearchCard />
-      <Hero />
+      {/* <Hero /> */}
       <BackgroundWrapper>
         <div>{children}</div>
-        <Footer />
+        {/* <Footer /> */}
       </BackgroundWrapper>
       <script
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_KEY}&libraries=places`}

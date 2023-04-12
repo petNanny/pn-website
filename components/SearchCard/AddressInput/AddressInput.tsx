@@ -8,8 +8,7 @@ export interface AddressInputProps {
   changeLocation: (Location: string) => void;
 }
 
-
-const PlacesAutocomplete = ({changeLatAndLon, changeLocation}: AddressInputProps) => {
+const PlacesAutocomplete = ({ changeLatAndLon, changeLocation }: AddressInputProps) => {
   const {
     ready,
     value,
@@ -94,14 +93,14 @@ const PlacesAutocomplete = ({changeLatAndLon, changeLocation}: AddressInputProps
   );
 };
 
-const AddressInput = ({changeLatAndLon, changeLocation}: AddressInputProps) => {
+const AddressInput = ({ changeLatAndLon, changeLocation }: AddressInputProps) => {
   return (
     <div className="form-control">
       <label tabIndex={0} className="label">
         <span className="label-text">Near</span>
       </label>
       {/* <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" /> */}
-      <PlacesAutocomplete changeLatAndLon = {changeLatAndLon} changeLocation= {changeLocation}/>
+      <PlacesAutocomplete changeLatAndLon={changeLatAndLon} changeLocation={changeLocation} />
     </div>
   );
 };
