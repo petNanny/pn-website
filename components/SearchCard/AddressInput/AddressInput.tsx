@@ -31,8 +31,6 @@ const PlacesAutocomplete = ({ changeLatAndLon, changeLocation }: AddressInputPro
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     // Update the keyword of the input element
     const location = e.target.value;
-    console.log("location");
-    console.log(location);
     setValue(location);
   };
 
@@ -48,7 +46,6 @@ const PlacesAutocomplete = ({ changeLatAndLon, changeLocation }: AddressInputPro
       // Get latitude and longitude via utility functions
       getGeocode({ address: description }).then((results) => {
         const { lat, lng } = getLatLng(results[0]);
-        console.log("📍 Coordinates: ", { lat, lng });
         changeLatAndLon(lat, lng);
       });
     };
