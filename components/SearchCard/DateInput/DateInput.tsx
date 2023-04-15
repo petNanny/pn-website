@@ -38,8 +38,8 @@ function Example({ changeSelectedStartAndEndDate }: DateInputProps) {
       setToValue("");
     }
     if (range?.from && range?.to) {
-      const startDate: string = range.from.toString();
-      const endDate: string = range.to.toString();
+      const startDate: string = format(range.from, "yyyy-MM-dd");
+      const endDate: string = format(range.to, "yyyy-MM-dd");
       changeSelectedStartAndEndDate(startDate, endDate);
     } else {
       changeSelectedStartAndEndDate("", "");
@@ -51,7 +51,7 @@ function Example({ changeSelectedStartAndEndDate }: DateInputProps) {
     <div className="dropdown">
       <label
         tabIndex={0}
-        className="w-full max-w-xs btn btn-outline text-black border-2 border-slate-300 hover:border-slate-300 hover:bg-transparent hover:text-black"
+        className="w-full justify-start text-base font-semibold max-w-xs btn btn-outline text-black border-2 border-slate-300 hover:border-slate-300 hover:bg-transparent hover:text-black"
       >
         {(fromValue ? fromValue : "Start Date") + " > " + (toValue ? toValue : "End Date")}
       </label>

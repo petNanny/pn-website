@@ -1,15 +1,9 @@
 import React from "react";
 
-const BECOMEPETSITTER_URL = `${process.env.BOARDING_PAGE_URL}becomePetSitter`;
-const SIGNUP_URL = `${process.env.BOARDING_PAGE_URL}register`;
-const LOGIN_URL = `${process.env.BOARDING_PAGE_URL}login`;
-const ADMIN_URL = `${process.env.BOARDING_PAGE_URL}adminPage`;
-
-// const BECOMEPETSITTER_URL = "http://localhost:3000/becomePetSitter";
-// const SIGNUP_URL = "http://localhost:3000/register";
-// const LOGIN_URL = "http://localhost:3000/login";
-// const ADMIN_URL = "http://localhost:3000/adminPage";
-
+const BECOMEPETSITTER_URL = `${process.env.NEXT_PUBLIC_BOARDING_PAGE_URL}becomePetSitter`;
+const SIGNUP_URL = `${process.env.NEXT_PUBLIC_BOARDING_PAGE_URL}register`;
+const LOGIN_URL = `${process.env.NEXT_PUBLIC_BOARDING_PAGE_URL}login`;
+const ADMIN_URL = `${process.env.NEXT_PUBLIC_BOARDING_PAGE_URL}adminPage`;
 //responsive: drawer
 const Navbar = () => {
   return (
