@@ -81,7 +81,7 @@ const PlacesAutocomplete = ({ changeLatAndLon, changeLocation }: AddressInputPro
         value={value}
         onChange={handleInput}
         disabled={!ready}
-        className="input input-bordered w-full max-w-xs border-slate-300 border-2 font-medium"
+        className="text-base font-semibold input input-bordered w-full max-w-xs border-slate-300 border-2 font-medium"
         placeholder="Your street name"
       />
       {/* We can use the "status" to decide whether we should display the dropdown or not */}

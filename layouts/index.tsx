@@ -12,7 +12,7 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <>
+    <div>
       <Header />
       <Navbar />
       <SearchCard />
@@ -24,7 +24,7 @@ const Layout = ({ children }: Props) => {
       <script
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_KEY}&libraries=places`}
       ></script>
-    </>
+    </div>
   );
 };
 

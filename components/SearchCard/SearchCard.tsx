@@ -6,8 +6,6 @@ import { useFormik, FormikProps } from "formik";
 import * as Yup from "yup";
 import { useState, useCallback } from "react";
 
-const BOARDING_PAGE_URL = "http://localhost:3000/";
-
 export interface SearchFormValues {
   location: string;
   latitude: number | undefined;
@@ -71,7 +69,8 @@ const SearchCard = () => {
       values.location = location;
       values.startDate = startDate;
       values.endDate = endDate;
-      const openUrl = `${BOARDING_PAGE_URL}?petService=${values.petService}&latitude=${values.latitude}&longitude=${values.longitude}&location=${values.location}&startDate=${values.startDate}&endDate=${values.endDate}`;
+      // const openUrl = `http://localhost:3000/?petService=${values.petService}&latitude=${values.latitude}&longitude=${values.longitude}&location=${values.location}&startDate=${values.startDate}&endDate=${values.endDate}`;
+      const openUrl = `${process.env.NEXT_PUBLIC_BOARDING_PAGE_URL}?petService=${values.petService}&latitude=${values.latitude}&longitude=${values.longitude}&location=${values.location}&startDate=${values.startDate}&endDate=${values.endDate}`;
       openInNewTab(openUrl);
     },
   });
