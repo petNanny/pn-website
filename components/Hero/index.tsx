@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-// import heroBg from "../../public/hero-1-bg-img.png";
-import heroImg from "../../images/dog.jpg";
+import heroBg from "../../public/hero-1-bg-img.png";
+// import heroImg from "../../images/dog.jpg";
 const Hero = () => {
   return (
     <section className="bg-[url('/hero-1-bg-img.png')]">
@@ -24,7 +24,7 @@ const Hero = () => {
           </button>
         </div>
         <div className=" w-4/5 md:w-1/2 mt-24">
-          <Image alt="Hero Image" className="mx-auto" src={heroImg} width={546} height={682} />
+          <Image alt="Hero Image" className="mx-auto" src={heroBg} width={546} height={682} />
         </div>
       </div>
     </section>

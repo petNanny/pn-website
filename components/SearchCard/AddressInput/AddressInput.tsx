@@ -18,6 +18,8 @@ const PlacesAutocomplete = ({ changeLatAndLon, changeLocation }: AddressInputPro
   } = usePlacesAutocomplete({
     requestOptions: {
       /* Define search scope here */
+      types: ["address"],
+      componentRestrictions: { country: ["au"] },
     },
     debounce: 300,
   });
