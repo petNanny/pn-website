@@ -19,22 +19,22 @@ const ServiceInput = ({ changePetService }: PetServiceInputProps) => {
         onChange={onChangHandler}
       >
         <optgroup label="At the sitter's home">
-          <option className="text-base" value="Dog Boarding">
-            Dog Boarding
+          <option className="text-base" value="Dog boarding">
+            Dog boarding
           </option>
-          <option className="text-base" value="Doggy Day Care">
-            Doggy Day Care
+          <option className="text-base" value="Doggy day care">
+            Doggy day care
           </option>
         </optgroup>
         <optgroup label="At your home">
-          <option className="text-base" value="Dog Walking">
-            Dog Walking
+          <option className="text-base" value="Dog walking">
+            Dog walking
           </option>
-          <option className="text-base" value="Home Visits">
-            Home Visits
+          <option className="text-base" value="Home visits">
+            Home visits
           </option>
-          <option className="text-base" value="House Sitting">
-            House Sitting
+          <option className="text-base" value="House sitting">
+            House sitting
           </option>
         </optgroup>
       </select>

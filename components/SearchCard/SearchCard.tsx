@@ -79,13 +79,16 @@ const SearchCard = () => {
     <div className="card w-fit shadow-2xl bg-base-100 mx-auto">
       <div className="card-body">
         <form
-          className="grid grid-cols-2 gap-4 items-end form-control"
+          className="md:grid md:grid-cols-2 md:gap-4 md:items-end form-control flex"
           onSubmit={formik.handleSubmit}
         >
           <ServiceInput changePetService={changePetService} />
-          <AddressInput changeLatAndLon={changeLatAndLon} changeLocation={changeLocation} />
           <DateInput changeSelectedStartAndEndDate={changeSelectedStartAndEndDate} />
-          <button type="submit" className="btn btn-accent normal-case border-2 border-slate-300">
+          <AddressInput changeLatAndLon={changeLatAndLon} changeLocation={changeLocation} />
+          <button
+            type="submit"
+            className="btn btn-accent normal-case border-2 border-slate-300 md:mt-0 mt-6"
+          >
             Search now
           </button>
         </form>
