@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar/Navbar";
 import SearchCard from "../components/SearchCard/SearchCard";
 import process from "process";
+import Head from "next/head";
 interface Props {
   children: ReactNode;
 }
@@ -14,6 +15,9 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <div className="h-screen bg-local bg-gradient-to-r from-teal-100 to-blue-grey-100 ">
+        <Head>
+          <title>PetNanny | Find Reliable Pet Sitters Near You</title>
+        </Head>
         <Header />
         <Navbar />
         <h1 className="m-10 text-4xl text-center font-normal leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
